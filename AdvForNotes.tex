@@ -1,0 +1,37 @@
+% 编译方式: latexmk -xelatex 或 xelatex*2
+\documentclass{ctexbook}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{syntonly}
+\usepackage{ulem}
+\usepackage{verbatim}
+%\syntaxonly
+\pagestyle{plain}
+\makeatletter
+\newcommand{\starttoc}{
+    \chapter*{\contentsname}
+    \@starttoc{toc}
+}
+\makeatother
+\renewcommand{\tableofcontents}{\twocolumn\starttoc\onecolumn}
+\normalem
+\hypersetup{
+    colorlinks,
+    linkcolor=blue,
+    citecolor=red,
+    filecolor=cyan,
+    urlcolor=magenta,
+}
+\title{高级Fortran笔记}
+\author{GasinAn}
+\begin{document}
+    \frontmatter
+    \maketitle
+    \include{copyright.tex}
+    \tableofcontents
+    \mainmatter
+    \appendix
+    \backmatter
+\end{document}
