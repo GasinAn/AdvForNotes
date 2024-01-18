@@ -4,7 +4,7 @@
 
 \subsection{\ProgramUnit{}和\ScopingUnit{}}
 
-\ProgramUnit{}是 Fortran \Program{}的基本组件. \ProgramUnit{}是\MainProgram{}, \ExternalSubprogram{}, \Module{}, 或\Submodule{}.
+\ProgramUnit{}是 Fortran \Program{}的基本\Component{}. \ProgramUnit{}是\MainProgram{}, \ExternalSubprogram{}, \Module{}, 或\Submodule{}.
 
 \Subprogram{}是\Function{}\Subprogram{}或\Subroutine{}\Subprogram{}.
 
@@ -18,7 +18,7 @@
 
 \Procedure{}是\Function{}或\Subroutine{}.
 
-\section{数据概念}
+\section{\Datum{}概念}
 
 \subsection{\Type{}}
 
@@ -37,3 +37,7 @@
 \subsubsection{\DerivedType{}}
 
 \DerivedType{}可以被参数化. \DerivedType{}的\Scalar{}\Object{}是\Structure{}; \Structure{}的\Assignment{}已被\Intrinsically{}定义, 但没有\Structure{}的\Intrinsic{}\Operation{}. 对每个\DerivedType{}, 都有一个\StructureConstructor{}可用于生成\Value{}. 另外, \DerivedType{}的\Object{}可用成\Procedure{}\Argument{}和\Function{}\Result{}, 并且可以出现于\Input{}/\Output{}\List{}. 如果另外的\Operation{}被\DerivedType{}所需要, 则可以由某些\Procedure{}定义.
+
+\subsection{\Datum{}\Value{}}
+
+根据\TypeParameter{}的\Value{}, 每个\Intrinsic{}\Type{}都与彼\Type{}的\Datum{}可以取的\Value{}的集合联系. \DerivedType{}的\Object{}可\Assume{}的\Value{}决定于\Type{}定义, \TypeParameter{}\Value{}, 和其\Component{}的\Value{}的集合.
