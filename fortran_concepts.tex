@@ -4,21 +4,21 @@
 
 \subsection{\ProgramUnit{}和\ScopingUnit{}}
 
-\ProgramUnit{}是 Fortran \Program{}的基本\Component{}. \ProgramUnit{}是\MainProgram{}, \ExternalSubprogram{}, \Module{}, 或\Submodule{}.
+\ProgramUnit{}是 Fortran \Program{}的基本组件. \ProgramUnit{}是\MainProgram{}, \ExternalSubprogram{}, \Module{}, 或\Submodule{}.
 
 \Subprogram{}是\Function{}\Subprogram{}或\Subroutine{}\Subprogram{}.
 
 \subsection{\Program{}}
 
-一个\Program{}应包含一个\MainProgram{}, 大于等于零个其他种类的\ProgramUnit{}, 大于等于零个\ExternalProcedure{}, 和大于等于零个以 Fortran 之外的方式定义的\Entity{}.
+一个\Program{}应包含一个\MainProgram{}, 大于等于零个其他种类的\ProgramUnit{}, 大于等于零个\ExternalProcedure{}, 和大于等于零个以 Fortran 之外的方式\Define{}的\Entity{}.
 
-\ExternalProcedure{}是以\ExternalSubprogram{}或 Fortran 之外的方式定义的\Procedure{}.
+\ExternalProcedure{}是以\ExternalSubprogram{}或 Fortran 之外的方式\Define{}的\Procedure{}.
 
 \subsection{\Procedure{}}
 
 \Procedure{}是\Function{}或\Subroutine{}.
 
-\section{\Datum{}概念}
+\section{\Data{}概念}
 
 \subsection{\Type{}}
 
@@ -36,8 +36,52 @@
 
 \subsubsection{\DerivedType{}}
 
-\DerivedType{}可以被参数化. \DerivedType{}的\Scalar{}\Object{}是\Structure{}; \Structure{}的\Assignment{}已被\Intrinsically{}定义, 但没有\Structure{}的\Intrinsic{}\Operation{}. 对每个\DerivedType{}, 都有一个\StructureConstructor{}可用于生成\Value{}. 另外, \DerivedType{}的\Object{}可用成\Procedure{}\Argument{}和\Function{}\Result{}, 并且可以出现于\Input{}/\Output{}\List{}. 如果另外的\Operation{}被\DerivedType{}所需要, 则可以由某些\Procedure{}定义.
+\DerivedType{}可以被参数化. \DerivedType{}的\Scalar{}\Object{}是\Structure{}; \Structure{}的\Assignment{}已被\Intrinsically{}\Define{}, 但没有\Structure{}的\Intrinsic{}\Operation{}. 对每个\DerivedType{}, 都有一个\StructureConstructor{}可用于生成\Value{}. 另外, \DerivedType{}的\Object{}可用成\Procedure{}\Argument{}和\Function{}\Result{}, 并且可以出现于\Input{}/\Output{}\List{}. 如果另外的\Operation{}被\DerivedType{}所需要, 则可以由某些\Procedure{}\Define{}.
 
-\subsection{\Datum{}\Value{}}
+\subsection{\Data{}\Value{}}
 
-根据\TypeParameter{}的\Value{}, 每个\Intrinsic{}\Type{}都与彼\Type{}的\Datum{}可以取的\Value{}的集合联系. \DerivedType{}的\Object{}可\Assume{}的\Value{}决定于\Type{}定义, \TypeParameter{}\Value{}, 和其\Component{}的\Value{}的集合.
+根据\TypeParameter{}的\Value{}, 每个\Intrinsic{}\Type{}都与彼\Type{}的\Data{}可以取的\Value{}的集合联系. \DerivedType{}的\Object{}可\Assume{}的\Value{}决定于\Type{}\Define{}, \TypeParameter{}\Value{}, 和其\Component{}的\Value{}的集合.
+
+\subsection{\Data{}\Entity{}}
+
+\subsubsection{总述}
+
+\Data{}\Entity{}是\Data{}\Object{}, \Expression{}的\Evaluation{}的\Result{}, 或\Function{}\Reference{}的\Execution{}的\Result{}.
+
+一个\Data{}\Entity{}有一个\Type{}和\TypeParameter{}, 并且可能有一个\Data{}\Value{}(一个例外是\Undefined{}\Variable{}). 每个\Data{}\Entity{}都有一个\Rank{}并因此要么是一个\Scalar{}要么是一个\Array{}.
+
+是\Function{}\Reference{}的\Execution{}的\Result{}的\Data{}\Entity{}被称为\Function{}\Result{}.
+
+\subsubsection{\Data{}\Object{}}
+
+\paragraph{\Data{}\Object{}分类}
+
+\Data{}\Object{}要么是\Constant{}, 要么是\Variable{}, 要么是\Constant{}的\Subobject{}. \Named{}\Data{}\Object{}的\Type{}和\TypeParameter{}可以被\Explicitly{}或\Implicitly{}\Specify{}.
+
+\Subobject{}是可独立于其他\Portion{}被\Reference{}的\Data{}\Object{}的一\Portion{}. 如果\Subobject{}是\Variable{}, 则还需要可独立于其他\Portion{}被\Define{}.
+
+这些``\Portion{}''包括\Array{}的\Portion{}(\ArrayElement{}和\ArraySection{}), \CharacterString{}的\Portion{}(\Substring{}), \ComplexType{}\Object{}的\Portion{}(实部和虚部), 和\Structure{}的\Portion{}(\Component{}). \Subobject{}本身是\Data{}\Object{}, 但\Subobject{}只由\ObjectDesignator{}或\Intrinsic{}\Function{}\Reference{}. \Variable{}的\Subobject{}是\Variable{}.
+
+\paragraph{\Variable{}}
+
+\Variable{}可以有一个\Value{}或是\Undefined{}\Variable{}; 在\Program{}\Execution{}期间可以被\Define{}, \Redefine{}, 或重新变得\Undefined{}.
+
+\paragraph{\Constant{}}
+
+\Constant{}要么是\Named{}\Constant{}要么是\Literal{}\Constant{}.
+
+\Named{}\Constant{}用 PARAMETER \Attribute{}定义.
+
+\paragraph{\Constant{}的\Subobject{}}
+
+\Constant{}的\Subobject{}是\Constant{}的一\Portion{}.
+
+在\Constant{}的\Subobject{}的\ObjectDesignator{}中, 被\Reference{}的\Portion{}可能取决于某个\Variable{}的\Value{}. (示例: 在\ArraySection{}中使用\IntegerType{}\Variable{}做\Index{})
+
+\paragraph{\Expression{}}
+
+\Expression{}在被\Evaluate{}时生成一个\Data{}\Entity{}. \Expression{}要么表示一个\Data{}\Object{}\Reference{}要么表示一个计算, 并由\Operand{}, \Operator{}和括号组成.
+
+\paragraph{\Function{}\Reference{}}
+
+\Function{}\Reference{}在\Function{}于\Expression{}\Evaluation{}期间被\Execute{}时生成一个\Data{}\Entity{}. \Function{}\Result{}的\Type{}, \TypeParameter{}, and \Rank{}由\Function{}的接口\Interface{}决定. \Function{}\Result{}的\Value{}由\Function{}的\Execution{}决定.
