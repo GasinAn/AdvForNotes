@@ -60,7 +60,7 @@
 
 \Subobject{}是可独立于其他\Portion{}被\Reference{}的\Data{}\Object{}的一\Portion{}. 如果\Subobject{}是\Variable{}, 则还需要可独立于其他\Portion{}被\Define{}.
 
-这些``\Portion{}''包括\Array{}的\Portion{}(\ArrayElement{}和\ArraySection{}), \CharacterString{}的\Portion{}(\Substring{}), \ComplexType{}\Object{}的\Portion{}(实部和虚部), 和\Structure{}的\Portion{}(\Component{}). \Subobject{}本身是\Data{}\Object{}, 但\Subobject{}只由\ObjectDesignator{}或\Intrinsic{}\Function{}\Reference{}. \Variable{}的\Subobject{}是\Variable{}.
+这些``\Portion{}''包括\Array{}的\Portion{}(\ArrayElement{}和\ArraySection{}), \CharacterString{}的\Portion{}(\Substring{}), \ComplexType{}\Object{}的\Portion{}(实部和虚部), 和\Structure{}的\Portion{}(\Component{}). \Subobject{}本身是\Data{}\Object{}, 但\Subobject{}只由\Object{}\Designator{}或\Intrinsic{}\Function{}\Reference{}. \Variable{}的\Subobject{}是\Variable{}.
 
 \paragraph{\Variable{}}
 
@@ -76,7 +76,7 @@
 
 \Constant{}的\Subobject{}是\Constant{}的一\Portion{}.
 
-在\Constant{}的\Subobject{}的\ObjectDesignator{}中, 被\Reference{}的\Portion{}可能取决于某个\Variable{}的\Value{}. (示例: 在\ArraySection{}中使用\IntegerType{}\Variable{}做\Index{})
+在\Constant{}的\Subobject{}的\Object{}\Designator{}中, 被\Reference{}的\Portion{}可能取决于某个\Variable{}的\Value{}. (示例: 在\ArraySection{}中使用\IntegerType{}\Variable{}做\Index{})
 
 \paragraph{\Expression{}}
 
@@ -85,3 +85,25 @@
 \paragraph{\Function{}\Reference{}}
 
 \Function{}\Reference{}在\Function{}于\Expression{}\Evaluation{}期间被\Execute{}时生成一个\Data{}\Entity{}. \Function{}\Result{}的\Type{}, \TypeParameter{}, and \Rank{}由\Function{}的接口\Interface{}决定. \Function{}\Result{}的\Value{}由\Function{}的\Execution{}决定.
+
+\subsection{\Reference{}}
+
+\Data{}\Object{}在其\Value{}于\Execution{}期间被请求时被\Reference{}. \Procedure{}在其被\Execute{}时被\Reference{}.
+
+\Data{}\Object{}\Designator{}或\Procedure{}\Designator{}作为\ActualArgument{}的出现并不构成对该\Data{}\Object{}或\Procedure{}的\Reference{}, 除非这种\Reference{}对于完成\ActualArgument{}的\Specification{}是必要的.
+
+\subsection{\Array{}}
+
+一个\Array{}可以有最多十五减其\Corank{}个\Dimension{}, 和任意\Extent{}在其任意\Dimension{}上. 一个\Array{}的\Size{}是其所有\Element{}的总数, 等于所有\Extent{}的乘积. 一个\Array{}可以是零\Size{}的. 一个\Array{}的\Shape{}决定于其\Rank{}和其每个\Dimension{}上的\Extent{}, 并表示为一个\Element{}是其所有\Extent{}的1\Rank{}\Array{}. 所有\Named{}\Array{}必须被\Declare{}, 并且\Named{}\Array{}的\Rank{}在其\Declaration{}中被\Specify{}. 除\AssumedRankArray{}外, 一旦被\Declare{}, \Named{}\Array{}的\Rank{}就是\Constant{}.
+
+为\Scalar{}\Object{}\Define{}的任何\Intrinsic{}\Operation{}都可以应用于\Conformable{}\Object{}. 这样的\Operation{}被\Elementally{}进行以生成一个和\Array{}的\Operand{}\Conformable{}的作为结果的\Array{}. 如果一个\Elemental{}\Operation{}是\Intrinsic{}\Prue{}\Operation{}或由一个\Prue{}\Elemental{}\Function{}实现, 那么这个\Elemental{}\Operation{}可以被同时地进行或以其他顺序进行.
+
+一个1\Rank{}\Array{}可由\Scalar{}和其他\Array{}\Construct{}并且可以被\Reshape{}成任意允许的\Array{}\Shape{}.
+
+\subsection{\Allocatable{}\Variable{}}
+
+\Allocatable{}\Variable{}的\Allocation{}状态要么是\Allocated{}要么是\Unallocated{}.
+
+一个\Unallocated{}\Variable{}不应被\Reference{}或\Define{}.
+
+如果一个\Allocatable{}\Variable{}是一个\Array{}, 那么其\Rank{}已被\Declare{}, 但其\Bound{}在其是\Allocated{}的时候才是确定的.
