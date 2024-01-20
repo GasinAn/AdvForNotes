@@ -1,0 +1,33 @@
+\chapter{\Type{}}
+
+\section{\Type{}的特征}
+
+\subsection{\Type{}的概念}
+
+Fortran 提供了一种抽象的方法, 通过这种方法可以在不依赖于特定物理表现的情况下对\Data{}进行分类. 这种抽象的方法是\Type{}的概念.
+
+一个\Type{}有一个\Name{}, 一个\Valid{}\Value{}的集合, 一个表示这些\Value{}(\Constant{})的方法, 和一个操作这些\Value{}的\Operation{}的集合.
+
+\subsection{\Type{}分类}
+
+\Type{}要么是\IntrinsicType{}要么是\DerivedType{}.
+
+\DerivedType{}是由\DerivedType{}\Definition{}或\Intrinsic{}\Module{}\Define{}的, 并且应该仅当是\Accessible{}之时被使用. \IntrinsicType{}总是\Accessible{}.
+
+\subsection{\Value{}的集合}
+
+对每个\Type{}, 都有一个\Valid{}\Value{}的集合. \LogicalType{}的\Valid{}\Value{}的集合不是\ProcessorDependent{}. \IntegerType{}, \CharacterType{}, 和\RealType{}的\Valid{}\Value{}的集合是\ProcessorDependent{}. \ComplexType{}的\Valid{}\Value{}的集合由所有实部和虚部的\Value{}的结合的集合组成.
+
+\subsection{\Constant{}}
+
+表示\Value{}的语法表明\Type{}, \TypeParameter{}, 和特定的\Value{}.
+
+是\Constant{}\Expression{}的\StructureConstructor{}表示\DerivedType{}的\Scalar{}\Constant{}\Value{}. 是\Constant{}\Expression{}的\ArrayConstructor{}表示\IntrinsicType{}或\DerivedType{}的\Constant{}\Array{}\Value{}.
+
+\Constant{}\Value{}可以\Named{}.
+
+对每个\IntrinsicType{}, 一个\Operation{}和相应的\Operator{}的集合以被\Intrinsically{}\Define{}. 这\Intrinsic{}集合可以由通过带 OPERATOR \Interface{}的\Function{}\Define{}的\Operation{}和\Operator{}拓充.
+
+对\DerivedType{}, 没有\Intrinsic{}\Operation{}. \DerivedType{}上的\Operation{}可由\Program{}\Define{}.
+
+

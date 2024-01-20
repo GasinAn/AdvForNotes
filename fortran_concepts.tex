@@ -26,13 +26,13 @@
 
 \Type{}是被命名的数据分类, 和其\TypeParameter{}一起决定\Value{}的集合, 表示\Value{}的语法, 和解释与操作\Value{}的\Operation{}的集合.
 
-\Type{}是\Intrinsic{}\Type{}或\DerivedType{}.
+\Type{}是\IntrinsicType{}或\DerivedType{}.
 
-\subsubsection{\Intrinsic{}\Type{}}
+\subsubsection{\IntrinsicType{}}
 
-\Intrinsic{}\Type{}是\IntegerType{}, \RealType{}, \ComplexType{}, \CharacterType{}和\LogicalType{}.
+\IntrinsicType{}是\IntegerType{}, \RealType{}, \ComplexType{}, \CharacterType{}和\LogicalType{}.
 
-所有\Intrinsic{}\Type{}都有一个\Kind{}\TypeParameter{}称作KIND, 其决定相应类型的表示方法. \CharacterType{}还有一个\Length{}\TypeParameter{}称作LEN, 其决定\CharacterString{}的\Length{}.
+所有\IntrinsicType{}都有一个\Kind{}\TypeParameter{}称作KIND, 其决定相应类型的表示方法. \CharacterType{}还有一个\Length{}\TypeParameter{}称作LEN, 其决定\CharacterString{}的\Length{}.
 
 \subsubsection{\DerivedType{}}
 
@@ -40,7 +40,7 @@
 
 \subsection{\Data{}\Value{}}
 
-根据\TypeParameter{}的\Value{}, 每个\Intrinsic{}\Type{}都与彼\Type{}的\Data{}可以取的\Value{}的集合联系. \DerivedType{}的\Object{}可\Assume{}的\Value{}决定于\Type{}\Define{}, \TypeParameter{}\Value{}, 和其\Component{}的\Value{}的集合.
+根据\TypeParameter{}的\Value{}, 每个\IntrinsicType{}都与彼\Type{}的\Data{}可以取的\Value{}的集合联系. \DerivedType{}的\Object{}可\Assume{}的\Value{}决定于\Type{}\Define{}, \TypeParameter{}\Value{}, 和其\Component{}的\Value{}的集合.
 
 \subsection{\Data{}\Entity{}}
 
