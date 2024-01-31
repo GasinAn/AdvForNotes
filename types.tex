@@ -30,4 +30,32 @@ Fortran 提供了一种抽象的方法, 通过这种方法可以在不依赖于�
 
 对\DerivedType{}, 没有\Intrinsic{}\Operation{}. \DerivedType{}上的\Operation{}可由\Program{}\Define{}.
 
+\section{\TypeParameter{}}
 
+如果\Type{}有\TypeParameter{}, 那么\Value{}的集合, 表示\Value{}的语法, 和\Type{}的\Value{}上的\Operation{}的集合取决于\Parameter{}的\Value{}.
+
+\TypeParameter{}要么是\Kind{}\TypeParameter{}要么是\Length{}\TypeParameter{}. 所有\TypeParameter{}都是\IntegerType{}的. \Kind{}\TypeParameter{}参与\Generic{}\Resolution{}, 但\Length{}\TypeParameter{}不参与.
+
+每个\IntrinsicType{}都有一个名为 KIND 的\Kind{}\TypeParameter{}. \IntrinsicType{}\CharacterType{}一个名为 LEN 的\Length{}\TypeParameter{}. \DerivedType{}可以有\TypeParameter{}.
+
+\TypeParameter{}\Value{}可由\Type{}\Specification{}\Specify{}.
+
+\begin{tabular}{ccc}
+    \it{\TypeParameter{}\Value{}}&是&\it{\Scalar{}\IntegerType{}\Expression{}}\\
+    &或&*\\
+    &或&:\\
+\end{tabular}
+
+\Kind{}\TypeParameter{}的\it{\TypeParameter{}\Value{}}应当是\Constant{}\Expression{}.
+
+冒号不应被用作\it{\TypeParameter{}\Value{}}除非在有 POINTER 或 ALLOCATABLE \Attribute{}的\Entity{}的\Declaration{}中.
+
+作为\it{\TypeParameter{}\Value{}}的冒号\Specify{}\DeferredTypeParameter{}.
+
+\Object{}的\DeferredTypeParameter{}的\Value{}决定于 ALLOCATE \Statement{}的成功\Execution{}, \Intrinsic{}\Assignment{}\Statement{}的\Execution{}, \Pointer{}\Assignment{}\Statement{}的\Execution{}, 或\ArgumentAssociation{}.
+
+作为\it{\TypeParameter{}\Value{}}的星号\Specify{}\Length{}\TypeParameter{}是\AssumedTypeParameter{}. 其被\DummyArgument{}用于从\EffectiveArgument{}中\Assume{}\TypeParameter{}\Value{}, 被 SELECT TYPE \Construct{}中的\AssociateName{}用于从相关的\Selector{}中\Assume{}\TypeParameter{}\Value{}, , 且被\CharacterType{}的\Named{}\Constant{}用于从\it{\Constant{}\Expression{}}中\Assume{}\Character{}\Length{}.
+
+\Kind{}\TypeParameter{}的\Value{}永远在\CompileTime{}已知.
+
+``\Length{}\TypeParameter{}''的名称被用于非\Kind{}\TypeParameter{}的\TypeParameter{}是因为它们经常\Specify{}\Length{}. 然而, 它们也可被用于其他用途. 它们和\Kind{}\TypeParameter{}的重要区别是它们的\Value{}无需在\CompileTime{}已知并且在\Execution{}时可能变化.
