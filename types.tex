@@ -40,22 +40,83 @@ Fortran 提供了一种抽象的方法, 通过这种方法可以在不依赖于�
 
 \TypeParameter{}\Value{}可由\Type{}\Specification{}\Specify{}.
 
-\begin{tabular}{ccc}
-    \it{\TypeParameter{}\Value{}}&是&\it{\Scalar{}\IntegerType{}\Expression{}}\\
+\begin{tabular}{lll}
+    \tit{\TypeParameter{}\Value{}}&是&\tit{\Scalar{}\IntegerType{}\Expression{}}\\
     &或&*\\
     &或&:\\
 \end{tabular}
 
-\Kind{}\TypeParameter{}的\it{\TypeParameter{}\Value{}}应当是\Constant{}\Expression{}.
+\Kind{}\TypeParameter{}的\tit{\TypeParameter{}\Value{}}应当是\Constant{}\Expression{}.
 
-冒号不应被用作\it{\TypeParameter{}\Value{}}除非在有 POINTER 或 ALLOCATABLE \Attribute{}的\Entity{}的\Declaration{}中.
+冒号不应被用作\tit{\TypeParameter{}\Value{}}除非在有 POINTER 或 ALLOCATABLE \Attribute{}的\Entity{}的\Declaration{}中.
 
-作为\it{\TypeParameter{}\Value{}}的冒号\Specify{}\DeferredTypeParameter{}.
+作为\tit{\TypeParameter{}\Value{}}的冒号\Specify{}\DeferredTypeParameter{}.
 
 \Object{}的\DeferredTypeParameter{}的\Value{}决定于 ALLOCATE \Statement{}的成功\Execution{}, \Intrinsic{}\Assignment{}\Statement{}的\Execution{}, \Pointer{}\Assignment{}\Statement{}的\Execution{}, 或\ArgumentAssociation{}.
 
-作为\it{\TypeParameter{}\Value{}}的星号\Specify{}\Length{}\TypeParameter{}是\AssumedTypeParameter{}. 其被\DummyArgument{}用于从\EffectiveArgument{}中\Assume{}\TypeParameter{}\Value{}, 被 SELECT TYPE \Construct{}中的\AssociateName{}用于从相关的\Selector{}中\Assume{}\TypeParameter{}\Value{}, , 且被\CharacterType{}的\Named{}\Constant{}用于从\it{\Constant{}\Expression{}}中\Assume{}\Character{}\Length{}.
+作为\tit{\TypeParameter{}\Value{}}的星号\Specify{}\Length{}\TypeParameter{}是\AssumedTypeParameter{}. 其被\DummyArgument{}用于从\EffectiveArgument{}中\Assume{}\TypeParameter{}\Value{}, 被 SELECT TYPE \Construct{}中的\AssociateName{}用于从相关的\Selector{}中\Assume{}\TypeParameter{}\Value{}, , 且被\CharacterType{}的\Named{}\Constant{}用于从\tit{\Constant{}\Expression{}}中\Assume{}\Character{}\Length{}.
 
 \Kind{}\TypeParameter{}的\Value{}永远在\CompileTime{}已知.
 
 ``\Length{}\TypeParameter{}''的名称被用于非\Kind{}\TypeParameter{}的\TypeParameter{}是因为它们经常\Specify{}\Length{}. 然而, 它们也可被用于其他用途. 它们和\Kind{}\TypeParameter{}的重要区别是它们的\Value{}无需在\CompileTime{}已知并且在\Execution{}时可能变化.
+
+\section{\Type{}, \TypeSpecifier{}, 和\Value{}}
+
+
+\subsection{\Type{}与\Value{}和\Object{}的关系}
+
+\Type{}的\Name{}充当\TypeSpecifier{}并可用于\Declare{}该\Type{}的\Object{}. \Declaration{}可以\Specify{}\Named{}\Object{}的\Type{}. \Data{}\Object{}可以\Explicitly{}或\Implicitly{}\Declare{}. \Data{}\Object{}除了其\Type{}之外还有\Attribute{}.
+
+\Array{}由\IntrinsicType{}或\DerivedType{}的\Scalar{}\Data{}组成, 并具有与其\Element{}相同的\Type{}和\TypeParameter{}.
+
+\Variable{}是\Data{}\Object{}. \Variable{}的\Type{}和\TypeParameter{}决定该\Variable{}可以取哪些\Value{}. \Assignment{}提供了一种改变\Variable{}的\Value{}的方法.
+
+\Variable{}的\Type{}决定可用于操作该\Variable{}的\Operation{}.
+
+\subsection{\TypeSpecifier{}和\Type{}\Compatibility{}}
+
+\TypeSpecifier{}\Specify{}\Type{}和\TypeParameter{}\Value{}. 其要么是\tit{\TypeSpecifier{}}要么是\tit{\Declaration{}\TypeSpecifier{}}.
+
+\begin{tabular}{lll}
+    \tit{\TypeSpecifier{}}&是&\tit{\Intrinsic{}\TypeSpecifier{}}\\
+    &或&\tit{\Derived{}\TypeSpecifier{}}\\
+\end{tabular}
+
+\Derived{}\TypeSpecifier{}不应\Specify{}\AbstractType{}.
+
+\begin{tabular}{lll}
+    \tit{\Declaration{}\TypeSpecifier{}}&是&\tit{\Intrinsic{}\TypeSpecifier{}}\\
+    &或&TYPE(\tit{\Intrinsic{}\TypeSpecifier{}})\\
+    &或&TYPE(\tit{\Derived{}\TypeSpecifier{}})\\
+    &或&CLASS(\tit{\Derived{}\TypeSpecifier{}})\\
+    &或&CLASS(*)\\
+    &或&TYPE(*)\\
+\end{tabular}
+
+在\tit{\Declaration{}\TypeSpecifier{}}中, 每个不是冒号或星号的\tit{\TypeParameter{}\Value{}}都应该\Specification{}\Expression{}.
+
+在使用 CLASS \Keyword{}的\tit{\Declaration{}\TypeSpecifier{}}中, \tit{\Derived{}\TypeSpecifier{}}应该\Specify{}一个\ExtensibleType{}.
+
+TYPE(\tit{\Derived{}\TypeSpecifier{}}) 不应\Specify{}\AbstractType{}.
+
+在 TYPE(\tit{\Intrinsic{}\TypeSpecifier{}}) 中, \tit{\Intrinsic{}\TypeSpecifier{}}不能以逗号结尾.
+
+用 CLASS \Keyword{}\Declare{}的\Entity{}应该是一个\DummyArgument{}或具有ALLOCATABLE 或 POINTER \Attribute{}.
+
+注: TYPE \TypeSpecifier{}和CLASS \TypeSpecifier{}的区别在于TYPE \TypeSpecifier{}只代表某一\Type{}而CLASS \TypeSpecifier{}代表某一\Type{}及其所有子\Type{}.
+
+\subsection{TYPE \TypeSpecifier{}}
+
+TYPE \TypeSpecifier{}用于\Declare{}\AssumedType{}\Entity{}, 或\IntrinsicType{}或\DerivedType{}\Entity{}.
+
+\Type{}\Declaration{}\Statement{}中的 TYPE \TypeSpecifier{}中的\tit{\Derived{}\TypeSpecifier{}}应当\Specify{}先前被\Define{}的\DerivedType{}. 如果\Data{}\Entity{}是\Function{}\Result{}, 则只要\DerivedType{}是在\FunctionBody{}中被\Define{}的或在\FunctionBody{}中通过\UseAssociation{}或\HostAssociation{}是\Accessible{}\DerivedType{}就可在 FUNCTION \Statement{} 中被\Specify{}. 如果\DerivedType{}在FUNCTION \Statement{}中被\Specify{}并在\FunctionBody{}中被\Define{}, 那么这就好像\Function{}\Result{}紧接着被\Specify{}的\DerivedType{}的\tit{\DerivedType{}\Definition{}}用彼\DerivedType{}被\Declare{}.
+
+\subsection{CLASS \TypeSpecifier{}}
+
+CLASS \TypeSpecifier{}用于\Declare{}\Polymorphic{}\Entity{}。\Polymorphic{}\Entity{}是在\Program{}\Execution{}期间能够具有不同\DynamicType{}的\Data{}\Entity{}。\DynamicType{}是\Data{}\Entity{}在\Program{}\Execution{}期间的特定点的\Type{}.
+
+\Type{}\Declaration{}\Statement{}中的 CLASS \TypeSpecifier{}中的\tit{\Derived{}\TypeSpecifier{}}应当\Specify{}先前被\Define{}的\DerivedType{}. 如果\Data{}\Entity{}是\Function{}\Result{}, 则只要\DerivedType{}是在\FunctionBody{}中被\Define{}的或在\FunctionBody{}中通过\UseAssociation{}或\HostAssociation{}是\Accessible{}\DerivedType{}就可在 FUNCTION \Statement{} 中被\Specify{}. 如果\DerivedType{}在FUNCTION \Statement{}中被\Specify{}并在\FunctionBody{}中被\Define{}, 那么这就好像\Function{}\Result{}紧接着彼\DerivedType{}的\tit{\DerivedType{}\Definition{}}用彼\DerivedType{}被\Declare{}.
+
+如果 CLASS \TypeSpecifier{}包含\Type{}\Name{}，那么\Polymorphic{}\Entity{}的\DeclaredType{}为被\Specify{}的\Type{}。\DeclaredType{}是\Data{}\Entity{}被要么\Explicitly{}要么\Implicitly{}\Declare{}具有的\Type{}.
+
+\Nonpolymorphic{}\Entity{}仅和相同\DeclaredType{}的\Entity{}有\Type{}\Compatibility{}. 不是\UnlimitedPolymorphic{}\Entity{}的\Polymorphic{}\Entity{}和相同\DeclaredType{}的或其\Extension{}的\Entity{}有\Type{}\Compatibility{}. 如果\Entity{}与某\Type{}的\Entity{}有\Type{}\Compatibility{}那么其与该\Type{}有\Type{}\Compatibility{}.
