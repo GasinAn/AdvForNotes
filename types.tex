@@ -113,10 +113,90 @@ TYPE \TypeSpecifier{}用于\Declare{}\AssumedType{}\Entity{}, 或\IntrinsicType{
 
 \subsection{CLASS \TypeSpecifier{}}
 
-CLASS \TypeSpecifier{}用于\Declare{}\Polymorphic{}\Entity{}。\Polymorphic{}\Entity{}是在\Program{}\Execution{}期间能够具有不同\DynamicType{}的\Data{}\Entity{}。\DynamicType{}是\Data{}\Entity{}在\Program{}\Execution{}期间的特定点的\Type{}.
+CLASS \TypeSpecifier{}用于\Declare{}\Polymorphic{}\Entity{}. \Polymorphic{}\Entity{}是在\Program{}\Execution{}期间能够具有不同\DynamicType{}的\Data{}\Entity{}. \DynamicType{}是\Data{}\Entity{}在\Program{}\Execution{}期间的特定点的\Type{}.
 
 \Type{}\Declaration{}\Statement{}中的 CLASS \TypeSpecifier{}中的\tit{\Derived{}\TypeSpecifier{}}应当\Specify{}先前被\Define{}的\DerivedType{}. 如果\Data{}\Entity{}是\Function{}\Result{}, 则只要\DerivedType{}是在\FunctionBody{}中被\Define{}的或在\FunctionBody{}中通过\UseAssociation{}或\HostAssociation{}是\Accessible{}\DerivedType{}就可在 FUNCTION \Statement{} 中被\Specify{}. 如果\DerivedType{}在FUNCTION \Statement{}中被\Specify{}并在\FunctionBody{}中被\Define{}, 那么这就好像\Function{}\Result{}紧接着彼\DerivedType{}的\tit{\DerivedType{}\Definition{}}用彼\DerivedType{}被\Declare{}.
 
-如果 CLASS \TypeSpecifier{}包含\Type{}\Name{}，那么\Polymorphic{}\Entity{}的\DeclaredType{}为被\Specify{}的\Type{}。\DeclaredType{}是\Data{}\Entity{}被要么\Explicitly{}要么\Implicitly{}\Declare{}具有的\Type{}.
+如果 CLASS \TypeSpecifier{}包含\Type{}\Name{}, 那么\Polymorphic{}\Entity{}的\DeclaredType{}为被\Specify{}的\Type{}. \DeclaredType{}是\Data{}\Entity{}被要么\Explicitly{}要么\Implicitly{}\Declare{}具有的\Type{}.
 
 \Nonpolymorphic{}\Entity{}仅和相同\DeclaredType{}的\Entity{}有\Type{}\Compatibility{}. 不是\UnlimitedPolymorphic{}\Entity{}的\Polymorphic{}\Entity{}和相同\DeclaredType{}的或其\Extension{}的\Entity{}有\Type{}\Compatibility{}. 如果\Entity{}与某\Type{}的\Entity{}有\Type{}\Compatibility{}那么其与该\Type{}有\Type{}\Compatibility{}.
+
+\section{\DerivedType{}}
+
+\subsection{\DerivedType{}概念}
+
+另外的\Type{}可以从\IntrinsicType{}和其他\DerivedType{}\Derive{}出来. \Type{}\Definition{}\Define{}\Type{}的\Name{}及其\Component{}和\TypeBoundProcedure{}的\Name{}和\Attribute{}.
+
+\DerivedType{}可以通过一个或多个\TypeParameter{}进行\Parameterize{}, 每个\TypeParameter{}都要么被定义为\Kind{}\TypeParameter{}要么被定义为\Length{}\TypeParameter{}并且可以具有\Default{}\Value{}.
+
+\DerivedType{}的\UltimateComponent{}是\IntrinsicType{}或具有 ALLOCATABLE \Attribute{}或 POINTER \Attribute{}的\Component{}, 加上派生类型的既没有 ALLOCATABLE \Attribute{}也没有 POINTER \Attribute{}的\Component{}的\UltimateComponent{}.
+
+\DerivedType{}的\DirectComponent{}是该\Type{}的\Component{}, 加上既没有 ALLOCATABLE \Attribute{}也没有 POINTER \Attribute{}的\DerivedType{}的\Component{}的\DirectComponent{}.
+
+\DerivedType{}的\PotentialSubobjectComponent{}是该\Type{}的\Nonpointer{}\Component{}以及\DerivedType{}的\Nonpointer{}\Component{}的\PotentialSubobjectComponent{}. 这包括所有可以是该\Type{}的\Object{}的\Subobject{}的\Component{}.
+
+\DerivedType{}的\Object{}的\Component{}, \DirectComponent{}, \PotentialSubobjectComponent{}和\UltimateComponent{}分别是其\Type{}的\Component{}, \DirectComponent{}, \PotentialSubobjectComponent{}和\UltimateComponent{}.
+
+\Default{}情况下, \Component{}\Definition{}的顺序不暗指\Storage{}\Sequence{}. 然而, 一个\Sequence{}\Type{}暗指一个\Storage{}\Sequence{}.
+
+\DerivedType{}的\Scalar{}\Entity{}是一个\Structure{}. 如果\DerivedType{}具有 SEQUENCE 属性, 则该类型的\Scalar{}\Entity{}是一个\Sequence{}\Structure{}.
+
+\subsection{\DerivedType{}\Definition{}}
+
+\subsubsection{\DerivedType{}\Definition{}的语法}
+
+\begin{tabular}{lll}
+    \tit{\DerivedType{}\Definition{}}&是&\tit{\DerivedType{}\Statement{}}\\
+    &&~~~~[\tit{\TypeParameter{}\Definition{}\Statement{}}]\\
+    &&~~~~[\tit{\Private{}或\Sequence{}}]\\
+    &&~~~~[\tit{\Component{}部分}]\\
+    &&~~~~[\tit{\TypeBoundProcedure{}部分}]\\
+    &&\tit{结束\Type{}\Statement{}}\\
+\end{tabular}
+
+\begin{tabular}{lll}
+    \tit{\DerivedType{}\Statement{}}&是&TYPE[[, \tit{\Type{}\Attribute{}\Specification{}\List{}}] ::] \tit{\Type{}\Name{}}[(\tit{\TypeParameter{}\Name{}\List{}})]\\
+\end{tabular}
+
+\begin{tabular}{lll}
+    \tit{\Type{}\Attribute{}\Specification{}}&是&ABSTRACT\\
+    &或&\tit{\Access{}\Specification{}}\\
+    &或&BIND(C)\\
+    &或&EXTENDS(父\tit{\Type{}\Name{}})\\
+\end{tabular}
+
+\DerivedType{}\tit{\Type{}\Name{}}不应是 DOUBLEPRECISION 或和任何\IntrinsicType{}的名称相同.
+
+如果\Type{}\Definition{}包含或\Inherit{}一个\DeferredTypeBoundProcedure{}, ABSTRACT 应当出现.
+
+如果 ABSTRACT 出现, 那么\Type{}应当\Extensible{}.
+
+如果 EXTENDS 出现, 那么 SEQUENCE 不应当出现.
+
+\begin{tabular}{lll}
+    \tit{\Private{}或\Sequence{}}&是&\tit{\Private{}\Component{}\Statement{}}\\
+    &或&\tit{\Sequence{}\Statement{}}\\
+\end{tabular}
+
+\subsection{\DerivedType{}\Parameter{}}
+
+\subsubsection{\TypeParameter{}\Definition{}\Statement{}}
+
+\begin{tabular}{lll}
+    \tit{\TypeParameter{}\Definition{}\Statement{}}&是&\tit{\IntegerType{}, \TypeParameter{}\Attribute{}\Specification{} :: \TypeParameter{}\Declaration{}\List{}}\\
+\end{tabular}
+
+\begin{tabular}{lll}
+    \tit{\TypeParameter{}\Declaration{}}&是&\tit{\TypeParameter{}\Name{}[ = \Scalar{}\IntegerType{}\Constant{}\Expression{}]}\\
+\end{tabular}
+
+\begin{tabular}{lll}
+    \tit{\TypeParameter{}\Attribute{}\Specification{}}&是&KIND\\
+    &或&LEN\\
+\end{tabular}
+
+\subsubsection{\TypeParameter{}顺序}
+
+\TypeParameter{}\Order{}是\DerivedType{}的\TypeParameter{}的\Order{}; 它被为\DerivedType{}\Specifier{}使用.
+
+\Nonextended{}\Type{}的\TypeParameter{}\Order{}是\DerivedType{}\Definition{}中的\tit{\TypeParameter{}\Name{}\List{}}中的\Order{}. \Extended{}\Type{}的\TypeParameter{}\Order{}由其父\Parent{}\Type{}的\TypeParameter{}\Order{}按\DerivedType{}\Definition{}中的\tit{\TypeParameter{}\Name{}\List{}}的\Order{}后跟所有另外的\TypeParameter{}组成.
