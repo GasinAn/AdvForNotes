@@ -199,7 +199,7 @@ CLASS \TypeSpecifier{}用于\Declare{}\Polymorphic{}\Entity{}. \Polymorphic{}\En
 
 \TypeParameter{}\Order{}是\DerivedType{}的\TypeParameter{}的\Order{}; 它被为\DerivedType{}\Specifier{}使用.
 
-\Nonextended{}\Type{}的\TypeParameter{}\Order{}是\DerivedType{}\Definition{}中的\tit{\TypeParameter{}\Name{}\List{}}中的\Order{}. \Extended{}\Type{}的\TypeParameter{}\Order{}由其父\Parent{}\Type{}的\TypeParameter{}\Order{}按\DerivedType{}\Definition{}中的\tit{\TypeParameter{}\Name{}\List{}}的\Order{}后跟所有另外的\TypeParameter{}组成.
+\Nonextended{}\Type{}的\TypeParameter{}\Order{}是\DerivedType{}\Definition{}中的\tit{\TypeParameter{}\Name{}\List{}}中的\Order{}. \Extended{}\Type{}的\TypeParameter{}\Order{}由其\Parent{}\Type{}的\TypeParameter{}\Order{}按\DerivedType{}\Definition{}中的\tit{\TypeParameter{}\Name{}\List{}}的\Order{}后跟所有另外的\TypeParameter{}组成.
 
 \subsection{\Component{}}
 
@@ -248,3 +248,9 @@ CLASS \TypeSpecifier{}用于\Declare{}\Polymorphic{}\Entity{}. \Polymorphic{}\En
 如果 PASS(\tit{\Argument{}\Name{}}) 被\Specify{}, 那么\Name{}为\tit{\Argument{}\Name{}}的\DummyArgument{}是\Procedure{}\Pointer{}\Component{}或\Named{}\TypeBoundProcedure{}的\PassedObjectDummyArgument{}.
 
 \PassedObjectDummyArgument{}应是与被\Define{}的\Type{}相同的\DeclaredType{被声明类型}的\Scalar{}\Nonpointer{}\Nonallocatable{}\Dummy{}\Data{}\Object{}; 其所有的\Length{}\TypeParameter{}都应被\Assume{}; 其应\Polymorphic{}当且仅当被\Define{}的\Type{}是\ExtensibleType{}. 其不应有 VALUE \Attribute{}.
+
+\subsubsection{\Component{}\Order{}}
+
+\TypeParameter{}\Order{}是\DerivedType{}的\TypeParameter{}的\Order{}; 它被为\DerivedType{}\Specifier{}使用.
+
+\Nonextended{}\Type{}的\Component{}\Order{}是\DerivedType{}\Definition{}中的\Component{}的\Declaration{}的\Order{}. \Extended{}\Type{}的\Component{}\Order{}由其\Parent{}\Type{}的\Component{}\Order{}按\DerivedType{}\Definition{}中的\Component{}的\Declaration{}的\Order{}后跟所有另外的\Component{}组成.
