@@ -200,3 +200,37 @@ CLASS \TypeSpecifier{}用于\Declare{}\Polymorphic{}\Entity{}. \Polymorphic{}\En
 \TypeParameter{}\Order{}是\DerivedType{}的\TypeParameter{}的\Order{}; 它被为\DerivedType{}\Specifier{}使用.
 
 \Nonextended{}\Type{}的\TypeParameter{}\Order{}是\DerivedType{}\Definition{}中的\tit{\TypeParameter{}\Name{}\List{}}中的\Order{}. \Extended{}\Type{}的\TypeParameter{}\Order{}由其父\Parent{}\Type{}的\TypeParameter{}\Order{}按\DerivedType{}\Definition{}中的\tit{\TypeParameter{}\Name{}\List{}}的\Order{}后跟所有另外的\TypeParameter{}组成.
+
+\subsection{\Component{}}
+
+\subsubsection{\Component{}\Definition{}\Statement{}}
+
+\begin{tabular}{lll}
+    \tit{\Component{}部分}&是&[\tit{\Component{}\Definition{}\Statement{}}] \dots{}\\
+\end{tabular}
+
+\begin{tabular}{lll}
+    \tit{\Component{}\Definition{}\Statement{}}&是&\tit{\Data{}\Component{}\Definition{}\Statement{}}\\
+    &或&\tit{\Procedure{}\Component{}\Definition{}\Statement{}}\\
+\end{tabular}
+
+\begin{tabular}{lll}
+    \tit{\Procedure{}\Component{}\Definition{}\Statement{}}&是&PROCEDURE([\tit{\Procedure{}\Interface{}}]), \tit{\Procedure{}\Component{}\Attribute{}\Specifier{}\List{}} :: \tit{\Procedure{}\Declaration\List{}}\\
+\end{tabular}
+
+\begin{tabular}{lll}
+    \tit{\Procedure{}\Component{}\Attribute{}\Specifier{}}&是&\tit{\Access{}\Specifier{}}\\
+    &或&NOPASS\\
+    &或&PASS[(\tit{\Argument{}\Name{}})]\\
+    &或&POINTER\\
+\end{tabular}
+
+在给定的\tit{\Procedure{}\Component{}\Definition{}\Statement{}}中相同的\tit{\Procedure{}\Component{}\Attribute{}\Specifier{}}不应出现多于一次.
+
+在每个\tit{\Procedure{}\Component{}\Attribute{}\Specifier{}\List{}}中 POINTER 都应出现.
+
+如果\Procedure{}\Pointer{}\Component{}有一个\Implicit{}\Interface{}或没有\Argument{}, NOPASS 应被\Specify{}.
+
+如果 PASS(\tit{\Argument{}\Name{}}) 出现, \Procedure{}\Pointer{}\Component{}的\Interface{}应有一个\Name{}为\tit{\Argument{}\Name{}}的\DummyArgument{}.
+
+在相同的\tit{\Procedure{}\Component{}\Attribute{}\Specifier{}\List{}}中 PASS 和 NOPASS 不应都出现.
