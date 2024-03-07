@@ -234,3 +234,17 @@ CLASS \TypeSpecifier{}用于\Declare{}\Polymorphic{}\Entity{}. \Polymorphic{}\En
 如果 PASS(\tit{\Argument{}\Name{}}) 出现, \Procedure{}\Pointer{}\Component{}的\Interface{}应有一个\Name{}为\tit{\Argument{}\Name{}}的\DummyArgument{}.
 
 在相同的\tit{\Procedure{}\Component{}\Attribute{}\Specifier{}\List{}}中 PASS 和 NOPASS 不应都出现.
+
+\subsubsection{\PassedObjectDummyArgument{}}
+
+\PassedObjectDummyArgument{}是\TypeBoundProcedure{}或\Procedure{}\Pointer{}\Component{}的与\Procedure{}由此被\Invoke{}的\Object{}\Associate{}的\DummyArgument{}.
+
+\PassedObjectDummyArgument{}是\Procedure{}\Pointer{}\Component{}或\TypeBoundProcedure{}的一个被区分的\DummyArgument{}. 它影响\Procedure{}\Override{}和\ArgumentAssociation{}.
+
+如果 NOPASS 被\Specify{}, 那么\Procedure{}\Pointer{}\Component{}或\TypeBoundProcedure{}没有\PassedObjectDummyArgument{}.
+
+如果 PASS 和 NOPASS 都没被\Specify{}或 PASS 被不带\tit{\Argument{}\Name{}}地\Specify{}, 那么\Procedure{}\Pointer{}\Component{}或\TypeBoundProcedure{}的第一个\DummyArgument{}是其\PassedObjectDummyArgument{}.
+
+如果 PASS(\tit{\Argument{}\Name{}}) 被\Specify{}, 那么\Name{}为\tit{\Argument{}\Name{}}的\DummyArgument{}是\Procedure{}\Pointer{}\Component{}或\Named{}\TypeBoundProcedure{}的\PassedObjectDummyArgument{}.
+
+\PassedObjectDummyArgument{}应是与被\Define{}的\Type{}相同的\DeclaredType{被声明类型}的\Scalar{}\Nonpointer{}\Nonallocatable{}\Dummy{}\Data{}\Object{}; 其所有的\Length{}\TypeParameter{}都应被\Assume{}; 其应\Polymorphic{}当且仅当被\Define{}的\Type{}是\ExtensibleType{}. 其不应有 VALUE \Attribute{}.
