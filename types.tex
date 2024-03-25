@@ -125,7 +125,7 @@ CLASS \TypeSpecifier{}用于\Declare{}\Polymorphic{}\Entity{}. \Polymorphic{}\En
 
 \subsection{\DerivedType{}概念}
 
-另外的\Type{}可以从\IntrinsicType{}和其他\DerivedType{}\Derive{}出来. \Type{}\Definition{}\Define{}\Type{}的\Name{}及其\Component{}和\TypeBoundProcedure{}的\Name{}和\Attribute{}.
+另外的\Type{}可以从\IntrinsicType{}和其他\DerivedType{}\Derive{}出来. \Type{}\Definition{}\Define{}\Type{}的\Name{}及其\Component{}和\TypeBound{}\Procedure{}的\Name{}和\Attribute{}.
 
 \DerivedType{}可以通过一个或多个\TypeParameter{}进行\Parameterize{}, 每个\TypeParameter{}都要么被定义为\Kind{}\TypeParameter{}要么被定义为\Length{}\TypeParameter{}并且可以具有\Default{}\Value{}.
 
@@ -150,7 +150,7 @@ CLASS \TypeSpecifier{}用于\Declare{}\Polymorphic{}\Entity{}. \Polymorphic{}\En
     &&~~~~[\tit{\TypeParameter{}\Definition{}\Statement{}}]\\
     &&~~~~[\tit{\Private{}或\Sequence{}}]\\
     &&~~~~[\tit{\Component{}部分}]\\
-    &&~~~~[\tit{\TypeBoundProcedure{}部分}]\\
+    &&~~~~[\tit{\TypeBound{}\Procedure{}部分}]\\
     &&\tit{结束\Type{}\Statement{}}\\
 \end{tabular}
 
@@ -237,15 +237,15 @@ CLASS \TypeSpecifier{}用于\Declare{}\Polymorphic{}\Entity{}. \Polymorphic{}\En
 
 \subsubsection{\PassedObjectDummyArgument{}}
 
-\PassedObjectDummyArgument{}是\TypeBoundProcedure{}或\Procedure{}\Pointer{}\Component{}的与\Procedure{}由此被\Invoke{}的\Object{}\Associate{}的\DummyArgument{}.
+\PassedObjectDummyArgument{}是\TypeBound{}\Procedure{}或\Procedure{}\Pointer{}\Component{}的与\Procedure{}由此被\Invoke{}的\Object{}\Associate{}的\DummyArgument{}.
 
-\PassedObjectDummyArgument{}是\Procedure{}\Pointer{}\Component{}或\TypeBoundProcedure{}的一个被区分的\DummyArgument{}. 它影响\Procedure{}\Override{}和\ArgumentAssociation{}.
+\PassedObjectDummyArgument{}是\Procedure{}\Pointer{}\Component{}或\TypeBound{}\Procedure{}的一个被区分的\DummyArgument{}. 它影响\Procedure{}\Override{}和\ArgumentAssociation{}.
 
-如果 NOPASS 被\Specify{}, 那么\Procedure{}\Pointer{}\Component{}或\TypeBoundProcedure{}没有\PassedObjectDummyArgument{}.
+如果 NOPASS 被\Specify{}, 那么\Procedure{}\Pointer{}\Component{}或\TypeBound{}\Procedure{}没有\PassedObjectDummyArgument{}.
 
-如果 PASS 和 NOPASS 都没被\Specify{}或 PASS 被不带\tit{\Argument{}\Name{}}地\Specify{}, 那么\Procedure{}\Pointer{}\Component{}或\TypeBoundProcedure{}的第一个\DummyArgument{}是其\PassedObjectDummyArgument{}.
+如果 PASS 和 NOPASS 都没被\Specify{}或 PASS 被不带\tit{\Argument{}\Name{}}地\Specify{}, 那么\Procedure{}\Pointer{}\Component{}或\TypeBound{}\Procedure{}的第一个\DummyArgument{}是其\PassedObjectDummyArgument{}.
 
-如果 PASS(\tit{\Argument{}\Name{}}) 被\Specify{}, 那么\Name{}为\tit{\Argument{}\Name{}}的\DummyArgument{}是\Procedure{}\Pointer{}\Component{}或\Named{}\TypeBoundProcedure{}的\PassedObjectDummyArgument{}.
+如果 PASS(\tit{\Argument{}\Name{}}) 被\Specify{}, 那么\Name{}为\tit{\Argument{}\Name{}}的\DummyArgument{}是\Procedure{}\Pointer{}\Component{}或\Named{}\TypeBound{}\Procedure{}的\PassedObjectDummyArgument{}.
 
 \PassedObjectDummyArgument{}应是与被\Define{}的\Type{}相同的\DeclaredType{被声明类型}的\Scalar{}\Nonpointer{}\Nonallocatable{}\Dummy{}\Data{}\Object{}; 其所有的\Length{}\TypeParameter{}都应被\Assume{}; 其应\Polymorphic{}当且仅当被\Define{}的\Type{}是\ExtensibleType{}. 其不应有 VALUE \Attribute{}.
 
@@ -254,3 +254,71 @@ CLASS \TypeSpecifier{}用于\Declare{}\Polymorphic{}\Entity{}. \Polymorphic{}\En
 \TypeParameter{}\Order{}是\DerivedType{}的\TypeParameter{}的\Order{}; 它被为\DerivedType{}\Specifier{}使用.
 
 \Nonextended{}\Type{}的\Component{}\Order{}是\DerivedType{}\Definition{}中的\Component{}的\Declaration{}的\Order{}. \Extended{}\Type{}的\Component{}\Order{}由其\Parent{}\Type{}的\Component{}\Order{}按\DerivedType{}\Definition{}中的\Component{}的\Declaration{}的\Order{}后跟所有另外的\Component{}组成.
+
+\subsubsection{\TypeBound{}\Procedure{}}
+
+\begin{tabular}{lll}
+    \tit{\TypeBound{}\Procedure{}部分}&是&\tit{包含\Statement{}}\\
+    &&~~~~[\tit{\Bind{}\Private{}\Statement{}}]\\
+    &&~~~~[\tit{\TypeBound{}\Procedure{}\Bind{}}]\\
+\end{tabular}
+
+\begin{tabular}{lll}
+    \tit{\Bind{}\Private{}\Statement{}}&是&PRIVATE\\
+\end{tabular}
+
+仅当\Type{}\Definition{}在\Module{}的\Specification{}部分内时\tit{\Bind{}\Private{}\Statement{}}是被允许的.
+
+\begin{tabular}{lll}
+    \tit{\TypeBound{}\Procedure{}\Bind{}}&是&\tit{\TypeBound{}\Procedure{}\Statement{}}\\
+    &或&\tit{\TypeBound{}\Generic{}\Statement{}}\\
+    &或&\tit{\Final{}\Procedure{}\Statement{}}\\
+\end{tabular}
+
+\begin{tabular}{lll}
+    \tit{\TypeBound{}\Procedure{}\Statement{}}&是&PROCEDURE[[, \tit{\Bind{}\Attribute{}\List{}}] :: ]\tit{\TypeBound{}\Procedure{}\Declaration{}\List{}}\\
+    &或&PROCEDURE(\tit{\Interface{}\Name{}}), \tit{\Bind{}\Attribute{}\List{}} :: \tit{\Bind{}\Name{}\List{}}\\
+\end{tabular}
+\begin{tabular}{lll}
+    \tit{\TypeBound{}\Procedure{}\Declaration{}}&是&\tit{\Bind{}\Name{}}[ => \tit{\Procedure{}\Name{}}]\\
+\end{tabular}
+
+如果 => \tit{\Procedure{}\Name{}}不在\tit{\TypeBound{}\Procedure{}\Declaration{}}中出现, 那么\tit{\Procedure{}\Name{}}和\tit{\Bind{}\Name{}}相同.
+
+\begin{tabular}{lll}
+    \tit{\TypeBound{}\Generic{}\Statement{}}&是&GENERIC[, \tit{\Access{}\Specification{}}] :: \tit{\Generic{}\Specification{}} => \tit{\Bind{}\Name{}\List{}}
+\end{tabular}
+
+\begin{tabular}{lll}
+    \tit{\Bind{}\Attribute{}}&是&\tit{\Access{}\Specification{}}\\
+    &或&DEFERRED\\
+    &或&NON\_{}OVERRIDABLE\\
+    &或&NOPASS\\
+    &或&PASS(\tit{\Argument{}\Name{}})\\
+\end{tabular}
+
+如果\TypeBound{}\Procedure{}或\Final{}\Subroutine{}的\Interface{}没有被\Define{}的\Type{}的\Argument{}, NOPASS 应出现.
+
+如果 PASS(\tit{\Argument{}\Name{}}) 出现, \TypeBound{}\Procedure{}或\Final{}\Subroutine{}的\Interface{}应有一个\Name{}为\tit{\Argument{}\Name{}}的\DummyArgument{}.
+
+在相同的\tit{\Bind{}\Attribute{}\List{}}中 PASS 和 NOPASS 不应都出现.
+
+在相同的\tit{\Bind{}\Attribute{}\List{}}中 DEFERRED 和 NON\_{}OVERRIDABLE 不应都出现.
+
+当且仅当\tit{\Interface{}\Name{}}出现时 DEFERRED 应当出现.
+
+带 DEFERRED \Attribute{}的\TypeBound{}\Procedure{}是\DeferredTypeBoundProcedure{}. DEFERRED \Keyword{}只应出现在\AbstractType{}的\Definition{}中.
+
+\subsubsection{\Final{}\Subroutine{}}
+
+\begin{tabular}{lll}
+    \tit{\Final{}\Procedure{}\Statement{}}&是&FINAL[ :: ]\tit{\Final{}\Subroutine{}\Name{}\List{}}\\
+\end{tabular}
+
+\tit{\Final{}\Subroutine{}\Name{}}应是带且只带一个\DummyArgument{}的\Module{}\Procedure{}的\Name{}. 彼\Argument{}应是被\Define{}的\DerivedType{}的\Nonoptional{}\Noncoarray{}\Nonpointer{}\Nonallocatable{}\Nonpolymorphic{}\Variable{}. 所有\Length{}\TypeParameter{}应被\Assume{}. \DummyArgument{}应不有 INTENT(OUT) 或 VALUE \Attribute{}
+
+\Final{}\Subroutine{}不应有和彼\Type{}的另一个\Final{}\Subroutine{}的\DummyArgument{}有相同的\Kind{}\TypeParameter{}和\Rank{}的\DummyArgument{}.
+
+如果一个\Final{}\Subroutine{}有一个\AssumedRankArray{}\DummyArgument{}, 那么彼\Type{}的其他\Final{}\Subroutine{}不应有和此\AssumedRankArray{}\DummyArgument{}有相同\Kind{}\TypeParameter{}的\DummyArgument{}.
+
+\Final{}\Subroutine{}不通过\Type{}\Extension{}被\Inherit{}且不可被\Override{}.\Parent{}\Type{}的\Final{}\Subroutine{}在\Extended{}\Type{}所有另外的\Final{}\Subroutine{}被\Call{}后被\Call{}.
