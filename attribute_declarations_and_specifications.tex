@@ -42,3 +42,35 @@
 \Automatic{}\Data{}\Object{}是有决定于不是\Constant{}\Expression{}的\tit{\Specification{}\Expression{}}的\Value{}的\TypeParameter{}或\Array{}\Bound{}的\Nondummy{}\Data{}\Object{}.
 
 \Automatic{}\Data{}\Object{}不应有 SAVE \Attribute{}.
+
+\section{\Attribute{}}
+
+\subsection{ ALLOCATABLE \Attribute{}}
+
+只有\Variable{}和\Component{}能有 ALLOCATABLE \Attribute{}. \Reference{}一个\Result{}\Variable{}有 ALLOCATABLE \Attribute{}的\Function{}的\Result{}是本身没有 ALLOCATABLE \Attribute{}的一个\Value{}.
+
+\subsection{ EXTERNAL \Attribute{}}
+
+如果\ExternalProcedure{}或\Dummy{}\Procedure{}被用作\ActualArgument{}或是\Procedure{}\Pointer{}\Assignment{}的\Target{}, 那么它应被\Declare{}有 EXTERNAL \Attribute{}.
+
+EXTERNAL \Attribute{}可在\Type{}\Declaration{}\Statement{}中, 通过\InterfaceBody{}, 通过 EXTERNAL \Statement{}, 或通过\Procedure{}\Declaration{}\Statement{}被\Specify{}.
+
+\subsection{ POINTER \Attribute{}}
+
+带 POINTER \Attribute{}的\Procedure{}应有 EXTERNAL \Attribute{}.
+
+\subsection{ VALUE \Attribute{}}
+
+VALUE \Attribute{}\Specify{}\DummyArgument{}的\Argument{}\Association{}的一种类型.
+
+带 VALUE \Attribute{}的\Entity{}应是\DummyArgument{}\Object{}. 它不应是\AssumedSizeArray{}, \Coarray{}或带\Coarray{}\UltimateComponent{}的\Variable{}.
+
+带 VALUE \Attribute{}的\Entity{}不应有 ALLOCATABLE , INTENT(INOUT) , INTENT(OUT) , POINTER , 或 VOLATILE \Attribute{}.
+
+\Procedure{}的带 BIND \Attribute{}的\DummyArgument{}不应既有 OPTIONA \Attribute{}又有 VALUE \Attribute{}.
+
+如果 VALUE \Attribute{}被\Specify{}, 效果是如同\ActualArgument{}被\Assign{}给一个临时\Variable{}, 并且彼\Variable{}随后被同\DummyArgument{}\Argument{}\Associate{}. 结果是\DummyArgument{}的\Value{}或\Definition{}状态的改变不影响\ActualArgument{}.
+
+\subsection{ VOLATILE \Attribute{}}
+
+VOLATILE \Attribute{}\Specify{}\Object{}可以不由\Program{}\Specify{}的方式被\Reference{}, \Define, 或成为\Undefined{}.
