@@ -1,6 +1,6 @@
 # Introduction
 
-Fortran is a modern high-performance parallel programming language with a long history. The current standard of Fortran is Fortran 2023, which is given by [Fortran 2023 standard document](https://www.iso.org/standard/82170.html). The standard document should be purchased for reading. A free equivalent document of Fortran 2023 standard document is [Fortran 2023 interpretation document](https://j3-fortran.org/doc/year/24/24-007.pdf). Fortran has its [official website](https://fortran-lang.org/).
+Fortran is a modern high-performance parallel programming language with a long history. The current standard of Fortran is Fortran 2023, which is given by [Fortran 2023 standard document](https://www.iso.org/standard/82170.html). The standard document should be purchased for reading. A free equivalent document of Fortran 2023 standard document is [Fortran 2023 interpretation document](https://j3-fortran.org/doc/year/24/24-007.pdf). Fortran has its [official website](https://fortran-lang.org/), on which you can find good resources.
 
 Fortran has its advantages, which are given on the official website:
 
