@@ -7,3 +7,9 @@ These Notes are written in [GitHub Flavored Markdown](https://github.github.com/
 People who read these Notes should be familiar in using some other programming languages, especially [Python](https://www.python.org/) and [C](https://www.open-std.org/jtc1/sc22/wg14/).
 
 These Notes are under developments and will be updated very slowly.
+
+<!--Introduction-->
+[Introduction](https://github.com/GasinAn/AdvForNotes/blob/main/Introduction/Introduction.md)
+
+<!--Setting_up_your_OS-->
+[Setting up your OS](https://github.com/GasinAn/AdvForNotes/blob/main/Setting_up_your_OS/Setting_up_your_OS.md)

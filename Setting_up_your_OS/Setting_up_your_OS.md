@@ -1,6 +1,6 @@
 # Setting up your OS
 
-Two mini-book tutorials, [*Setting up your OS*](https://fortran-lang.org/learn/os_setup/) and [*Building programs*](https://fortran-lang.org/learn/building_programs/), on Fortran official website will help you. 
+Two mini-book tutorials, [*Setting up your OS*](https://fortran-lang.org/learn/os_setup/) and [*Building programs*](https://fortran-lang.org/learn/building_programs/), on Fortran official website will help you.
 
 There are many Fortran compilers listed on [this website](https://fortran-lang.org/compilers/). In my opinion, [GNU Fortran Compiler (gfortran)](https://gcc.gnu.org/fortran/) is good for debugging, and [Intel Fortran Compiler (ifx)](https://software.intel.com/content/www/us/en/develop/articles/intel-oneapi-fortran-compiler-release-notes.html) is good for generating executable files with the fastest speed.
 
