@@ -14,5 +14,8 @@ These Notes are under developments and will be updated very slowly.
 <!--Setting_up_your_OS-->
 [Setting up your OS](https://gasinan.github.io/AdvForNotes/Setting_up_your_OS)
 
+<!--Conventions_of_syntax_expressions-->
+[Conventions of syntax expressions](https://gasinan.github.io/AdvForNotes/Conventions_of_syntax_expressions)
+
 <!--Hello_world-->
 ["Hello, world!"](https://gasinan.github.io/AdvForNotes/Hello_world)
