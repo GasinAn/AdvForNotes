@@ -13,3 +13,6 @@ These Notes are under developments and will be updated very slowly.
 
 <!--Setting_up_your_OS-->
 [Setting up your OS](https://gasinan.github.io/AdvForNotes/Setting_up_your_OS)
+
+<!--Hello_world-->
+["Hello, world!"](https://gasinan.github.io/AdvForNotes/Hello_world)
