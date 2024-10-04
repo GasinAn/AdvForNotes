@@ -18,7 +18,8 @@ for md_path in md_paths:
                          .replace(ADD_LINK_START_SYMBOL, "")
                          .replace(ADD_LINK_END_SYMBOL, ""))
             link_url = f"{PROJECT_URL}/{link_name}"
-            link_title = link_name.replace("_", " ")
+            with open(f"{link_name}.md", "r") as md:
+                link_title = md.readlines()[0].replace("#", "").strip()
             link = f"[{link_title}]({link_url})\n"
             md_contents[i+1] = link
 
