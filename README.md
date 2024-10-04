@@ -9,7 +9,7 @@ People who read these Notes should be familiar in using some other programming l
 These Notes are under developments and will be updated very slowly.
 
 <!--Introduction-->
-[Introduction](https://github.com/GasinAn/AdvForNotes/blob/main/Introduction/Introduction.md)
+[Introduction](https://gasinan.github.io/AdvForNotes/Introduction)
 
 <!--Setting_up_your_OS-->
-[Setting up your OS](https://github.com/GasinAn/AdvForNotes/blob/main/Setting_up_your_OS/Setting_up_your_OS.md)
+[Setting up your OS](https://gasinan.github.io/AdvForNotes/Setting_up_your_OS)
