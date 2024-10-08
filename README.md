@@ -1,5 +1,3 @@
-# Advanced Fortran Notes
-
 These Advanced Fortran Notes is for introducing usage of [Fortran](https://fortran-lang.org/) programming language.
 
 These Notes are written in [GitHub Flavored Markdown](https://github.github.com/gfm/) and hanged on [these Github Pages](https://gasinan.github.io/AdvForNotes).
