@@ -9,7 +9,7 @@ program main
 end program main
 ```
 
-- Every Fortran program executes from `` program `name` `` to ``end program `name` ``, where `` `name` `` is the name of the Fortran program. "Names" (such as variable names, procedure names and module names) in Fortran must be formed by letters, digits and underscore "`_`", and must start with a letter (which means "`__main__`" is not a valid "name").
+- Every Fortran program executes from `` program `name` `` to ``end program `name` ``, where `` `name` `` is the name of the Fortran program. "Names" (such as variable names, procedure names and module names) in Fortran must be formed by letters, digits and underscore `_`, and must start with a letter (which means `__main__` is not a valid "name").
 
 - ``implicit none`` bans the confusing "I-N implicit declaration rule" of Fortran. It is a good habit to add ``implicit none`` in every Fortran program, even if nothing is declared in the program.
 
