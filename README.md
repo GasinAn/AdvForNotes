@@ -1,4 +1,4 @@
-# AdvForNotes
+# Advanced Fortran Notes
 
 These Advanced Fortran Notes is for introducing usage of [Fortran](https://fortran-lang.org/) programming language.
 
