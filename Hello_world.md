@@ -13,4 +13,4 @@ end program main
 
 - ``implicit none`` bans the confusing "I-N implicit declaration rule" of Fortran. It is a good habit to add ``implicit none`` in every Fortran program, even if nothing is declared in the program.
 
-- ``print`` makes an output to "file with unit \*", which is usually the screen. "\*," means that the output is in "format \*", which will be automatically determined by the processor with some restrictions of Fortran standard.
+- ``print`` makes an output to "file with unit \*", which is usually the screen. ``*,`` means that the output is in "format \*", which will be automatically determined by the processor with some restrictions of Fortran standard.
