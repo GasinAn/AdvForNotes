@@ -16,4 +16,4 @@ The syntax rules of Fortran are expressed with the following conventions, which 
 
 - `` `xyz-list` := `xyz`{, `xyz`}... ``.
 
-- `......` stands for a part which I am not willing to talk about temporarily.
+- `......` stands for a part which I do not want to discuss for the moment.
