@@ -17,13 +17,13 @@ Briefly speaking, a program unit can be divided into parts in sequence: a progra
 
 | |
 | :--- |
-| program unit start statement |
-|     USE statement part |
-|     IMPORT statement part |
-|     `implicit none` |
-|     IMPLICIT statement part |
-|     specification part |
-|     execution part |
-|     `contains` |
-|     contained subprogram part |
-| program unit end statement |
+| Program unit start statement |
+| &nbsp &nbsp &nbsp &nbsp USE statement part |
+| &nbsp &nbsp &nbsp &nbsp IMPORT statement part |
+| &nbsp &nbsp &nbsp &nbsp `implicit none` |
+| &nbsp &nbsp &nbsp &nbsp IMPLICIT statement part |
+| &nbsp &nbsp &nbsp &nbsp Specification part |
+| &nbsp &nbsp &nbsp &nbsp Execution part |
+| &nbsp &nbsp &nbsp &nbsp `contains` |
+| &nbsp &nbsp &nbsp &nbsp Contained subprogram part |
+| Program unit end statement |
