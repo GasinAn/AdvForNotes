@@ -20,7 +20,7 @@ for md_path in md_paths:
             link_url = f"{PROJECT_URL}/{link_name}"
             with open(f"{link_name}.md", "r") as md:
                 link_title = md.readlines()[0].replace("#", "").strip()
-            link = f"[{link_title}]({link_url})\n"
+            link = f"- [{link_title}]({link_url})\n"
             md_contents[i+1] = link
 
     with open(md_path, "w") as f:

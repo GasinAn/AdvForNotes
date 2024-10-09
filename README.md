@@ -7,13 +7,13 @@ People who read these Notes should be familiar in using some other programming l
 These Notes are under developments and will be updated very slowly.
 
 <!--Introduction-->
-[Introduction](https://gasinan.github.io/AdvForNotes/Introduction)
+- [Introduction](https://gasinan.github.io/AdvForNotes/Introduction)
 
 <!--Setting_up_your_OS-->
-[Setting up your OS](https://gasinan.github.io/AdvForNotes/Setting_up_your_OS)
+- [Setting up your OS](https://gasinan.github.io/AdvForNotes/Setting_up_your_OS)
 
 <!--Conventions_of_syntax_expressions-->
-[Conventions of syntax expressions](https://gasinan.github.io/AdvForNotes/Conventions_of_syntax_expressions)
+- [Conventions of syntax expressions](https://gasinan.github.io/AdvForNotes/Conventions_of_syntax_expressions)
 
 <!--Hello_world-->
-["Hello, world!"](https://gasinan.github.io/AdvForNotes/Hello_world)
+- ["Hello, world!"](https://gasinan.github.io/AdvForNotes/Hello_world)
