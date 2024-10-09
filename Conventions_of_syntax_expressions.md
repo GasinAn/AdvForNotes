@@ -14,6 +14,6 @@ The syntax rules of Fortran are expressed with the following conventions, which 
  
 - `{ }...` encloses an optionally repeated item which may occur zero or more times.
 
-- `` `xyz-list` := `xyz`{, `xyz`} ... ``.
+- `` `xyz-list` := `xyz`{, `xyz`}... ``.
 
 - `......` stands for a part which I am not willing to talk about temporarily.
