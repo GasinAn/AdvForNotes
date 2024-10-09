@@ -16,19 +16,20 @@ A program unit shall start with a program unit start statement, and end with a p
 Briefly speaking, a program unit can be divided into parts in sequence: a program unit start statement, a USE  statement part, a IMPORT statement part, `implicit none`, a IMPLICIT statement part, a specification part, an execution part, `contains`, a contained subprogram part, and a program unit end statement. This is summarized in the following table.
 
 <style>
-table {
-margin: auto;
-}
+    table {
+        margin: auto;
+    }
 </style>
 
-| :--- |
-| Program unit start statement |
-| &nbsp; &nbsp; &nbsp; &nbsp; USE statement part |
-| &nbsp; &nbsp; &nbsp; &nbsp; IMPORT statement part |
-| &nbsp; &nbsp; &nbsp; &nbsp; `implicit none` |
-| &nbsp; &nbsp; &nbsp; &nbsp; IMPLICIT statement part |
-| &nbsp; &nbsp; &nbsp; &nbsp; Specification part |
-| &nbsp; &nbsp; &nbsp; &nbsp; Execution part |
-| &nbsp; &nbsp; &nbsp; &nbsp; `contains` |
-| &nbsp; &nbsp; &nbsp; &nbsp; Contained subprogram part |
-| Program unit end statement |
+<table>
+<tr><td> Program unit start statement </td></tr>
+<tr><td> &nbsp; &nbsp; &nbsp; &nbsp; USE statement part </td></tr>
+<tr><td> &nbsp; &nbsp; &nbsp; &nbsp; IMPORT statement part </td></tr>
+<tr><td> &nbsp; &nbsp; &nbsp; &nbsp; `implicit none` </td></tr>
+<tr><td> &nbsp; &nbsp; &nbsp; &nbsp; IMPLICIT statement part </td></tr>
+<tr><td> &nbsp; &nbsp; &nbsp; &nbsp; Specification part </td></tr>
+<tr><td> &nbsp; &nbsp; &nbsp; &nbsp; Execution part </td></tr>
+<tr><td> &nbsp; &nbsp; &nbsp; &nbsp; `contains` </td></tr>
+<tr><td> &nbsp; &nbsp; &nbsp; &nbsp; Contained subprogram part </td></tr>
+<tr><td> Program unit end statement </td></tr>
+</table>
