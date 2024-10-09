@@ -15,6 +15,7 @@ A program unit shall start with a program unit start statement, and end with a p
 
 Briefly speaking, a program unit can be divided into parts in sequence: a program unit start statement, a USE  statement part, a IMPORT statement part, `implicit none`, a IMPLICIT statement part, a specification part, an execution part, `contains`, a contained subprogram part, and a program unit end statement. This is summarized in the following table.
 
+| |
 | :--- |
 | program unit start statement |
 |     USE statement part |
