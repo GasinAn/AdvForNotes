@@ -6,6 +6,8 @@ People who read these Notes should be familiar in using some other programming l
 
 These Notes are under developments and will be updated very slowly.
 
+I am glad to receive pull requests or issues on [GitHub repo](https://github.com/GasinAn/AdvForNotes) for improvements of these Notes.
+
 <!--Introduction-->
 - [Introduction](https://gasinan.github.io/AdvForNotes/Introduction)
 
