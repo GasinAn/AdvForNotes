@@ -23,7 +23,7 @@ If a lexical token is split across the end of a line, the first nonblank charact
 If a character context is to be continued, an `&` shall be the last nonblank character on the line. There shall be a later line that is not a comment; an `&` shall be the first nonblank character on the next such line and the statement continues with the next character following that `&`.
 
 The following program is valid. The 3rd line is continued by the 5th line.
-```fortran
+```fortran-free-form
 program main
     implicit none
     print *, &
@@ -33,7 +33,7 @@ end program main
 ```
 
 The following program is valid. The 3rd line is continued by the 4th line.
-```fortran
+```fortran-free-form
 program main
     implicit none
     print *, & ! A comment
@@ -42,7 +42,7 @@ end program main
 ```
 
 The following program is valid. The 3rd line is continued by the 4th line.
-```fortran
+```fortran-free-form
 program main
     implicit none
     print *, 'Hello, &
