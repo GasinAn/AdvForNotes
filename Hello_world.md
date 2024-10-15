@@ -2,7 +2,7 @@
 
 Here is the "Hello, world!" example of Fortran.
 
-```fortran-free-form
+```fortran
 program main
     implicit none
     print *, 'Hello, World!'
