@@ -20,3 +20,6 @@ These Notes are under developments and will be updated very slowly.
 
 <!--Program_units-->
 - [Program units](https://gasinan.github.io/AdvForNotes/Program_units)
+
+<!--Character_set-->
+- [Character set](https://gasinan.github.io/AdvForNotes/Character_set)
