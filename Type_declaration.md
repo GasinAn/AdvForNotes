@@ -35,9 +35,9 @@ The `` `object-name` `` specifies the name of a variable or a named constant, an
 
 The `` `initialization` `` should be in following form.
 ```
-`entity-decl` := = `constant-expr`
-              || => null()
-              || => `initial-data-target`
+`initialization` := = `constant-expr`
+                 || => null()
+                 || => `initial-data-target`
 ```
 The `` = `constant-expr` `` specifies that a normal variable or a normal named constant is initialized by assignment from `constant-expr`. The `` => null() `` specifies that a pointer is initialized by nullified, i.e., disassociated. The `` => `initial-data-target` `` specifies that a pointer is initialized by associated to `` `initial-data-target` ``.
 
