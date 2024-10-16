@@ -31,3 +31,6 @@ I am glad to receive pull requests or issues on [GitHub repo](https://github.com
 
 <!--Type_declaration-->
 - [Type declaration](https://gasinan.github.io/AdvForNotes/Type_declaration)
+
+<!--Intrinsic_types-->
+- [Intrinsic types](https://gasinan.github.io/AdvForNotes/Intrinsic_types)
