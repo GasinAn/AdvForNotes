@@ -10,6 +10,8 @@ Commonly, if we say "an attribute", actually it refers to an attribute which is 
 
 ## Type declaration statement
 
+The type declaration statement in Fortran must be added in the specification part.
+
 The type declaration statement in Fortran `` `type-declaration-stmt` `` is in following form.
 ```
 `type-declaration-stmt` := `declaration-type-spec`{{, `attr-spec`}... ::} `entity-decl`{, `entity-decl`}...
