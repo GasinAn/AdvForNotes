@@ -21,7 +21,7 @@ I suggest you to always add `::` in the type declaration statement, or you will 
 `type-declaration-stmt` := `declaration-type-spec`{, `attr-spec`}... :: `entity-decl`{, `entity-decl`}...
 ```
 
-The `` `declaration-type-spec` `` specifies the type and type parameters. A `` `attr-spec` `` specifies an attribute. A `` `entity-decl` `` should be in following form.
+The `` `declaration-type-spec` `` specifies the type and type parameters. An `` `attr-spec` `` specifies an attribute. An `` `entity-decl` `` should be in following form.
 ```
 `entity-decl` := `object-name`{(`array-spec`)}{[`coarray-spec`]}{*`char-length`}{`initialization`}
               || `function-name`{*`char-length`}
@@ -43,7 +43,7 @@ The `` = `constant-expr` `` specifies that a normal variable or a normal named c
 
 ## Explicit initialization and the SAVE attribute
 
-The appearance of `` `initialization` `` in an `` `entity-decl` `` for a variable specifies that the variable is with explicit initialization. WARNING: Explicit initialization of a variable that is not in an obsolescent common block IMPLIES the SAVE attribute, and a variable which has the SAVE attribute in a procedure will be equivalent to a static local variable in C. This implication often cause misunderstanding, and I suggest that you should only add the `` `initialization` `` when you have explicitly specified the SAVE attribute, or the PARAMETER attribute (The PARAMETER attribute specifies that the `` `object-name` `` is not the name of a variable but a name of a named constant), by adding a `` `attr-spec` ``. For example, it is proper for you to write the following three programs,
+The appearance of `` `initialization` `` in an `` `entity-decl` `` for a variable specifies that the variable is with explicit initialization. WARNING: Explicit initialization of a variable that is not in an obsolescent common block IMPLIES the SAVE attribute, and a variable which has the SAVE attribute in a procedure will be equivalent to a static local variable in C. This implication often cause misunderstanding, and I suggest that you should only add the `` `initialization` `` when you have explicitly specified the SAVE attribute, or the PARAMETER attribute (The PARAMETER attribute specifies that the `` `object-name` `` is not the name of a variable but a name of a named constant), by adding an `` `attr-spec` ``. For example, it is proper for you to write the following three programs,
 ```fortran-free-form
 program main
     implicit none
