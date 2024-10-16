@@ -28,3 +28,6 @@ I am glad to receive pull requests or issues on [GitHub repo](https://github.com
 
 <!--Source_form-->
 - [Source form](https://gasinan.github.io/AdvForNotes/Source_form)
+
+<!--Type_declaration-->
+- [Type declaration](https://gasinan.github.io/AdvForNotes/Type_declaration)
