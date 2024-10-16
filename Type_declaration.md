@@ -23,12 +23,12 @@ I suggest you to always add `::` in the type declaration statement, or you will 
 
 The `` `declaration-type-spec` `` specifies the type and type parameters. An `` `attr-spec` `` specifies an attribute. An `` `entity-decl` `` should be in following form.
 ```
-`entity-decl` := `object-name`{(`array-spec`)}{[`coarray-spec`]}{*`char-length`}{`initialization`}
+`entity-decl` := `object-name`{(`array-spec`)}{[`coarray-spec`]}{*`char-length`} {`initialization`}
               || `function-name`{*`char-length`}
 ```
 The `` `char-length` `` specifies the length of a variable, a named constant, or a function result of character type, but I suggest that it is not good for you to add it in the type declaration statement, because it is not modern. The `` `entity-decl` `` which you add in the Fortran program should be in following form.
 ```
-`entity-decl` := `object-name`{(`array-spec`)}{[`coarray-spec`]}{`initialization`}
+`entity-decl` := `object-name`{(`array-spec`)}{[`coarray-spec`]} {`initialization`}
               || `function-name`
 ```
 The `` `object-name` `` specifies the name of a variable or a named constant, and the `` `function-name` `` specifies the name of a function. The `` (`array-spec`) `` specifies the rank and the bounds of indexes of an array. The `` [`coarray-spec`] `` specifies the rank and the bounds of indexes of a coarray. The `` `initialization` `` specifies the initialization.
