@@ -1,7 +1,6 @@
 # "Hello, world!"
 
 Here is the "Hello, world!" example of Fortran.
-
 ```fortran-free-form
 program main
     implicit none
