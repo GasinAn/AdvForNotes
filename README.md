@@ -74,8 +74,5 @@ I am glad to receive pull requests or issues on [GitHub repo](https://github.com
 <!--Interoperability_with_C-->
 - [Interoperability with C](https://gasinan.github.io/AdvForNotes/Interoperability_with_C)
 
-<!--Preprocessing-->
-- [Preprocessing](https://gasinan.github.io/AdvForNotes/Preprocessing)
-
 <!--Plotting-->
 - [Plotting](https://gasinan.github.io/AdvForNotes/Plotting)

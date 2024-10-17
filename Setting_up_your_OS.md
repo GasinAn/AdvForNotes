@@ -8,4 +8,4 @@ There are many text editors listed on [this website](https://fortran-lang.org/le
 
 There are many IDEs listed on [this website](https://fortran-lang.org/learn/os_setup/ides/). I don't use them at all, since VS Code is the best.
 
-There are many build tools listed on [this website](https://fortran-lang.org/learn/building_programs/build_tools/). Fortran is developing [Fortran Package Manager (fpm)](https://fpm.fortran-lang.org/), which is a package manager and build system for Fortran, but there is a long way to go.
+There are many build tools listed on [this website](https://fortran-lang.org/learn/building_programs/build_tools/). Fortran has no intrinsic way to do preprocessing, but preprocessor [fypp](https://fypp.readthedocs.io/en/stable/) is easy to use and widely used. Fortran is developing [Fortran Package Manager (fpm)](https://fpm.fortran-lang.org/), which is a package manager and build system for Fortran, but there is a long way to go.
