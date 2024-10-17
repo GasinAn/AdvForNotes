@@ -34,3 +34,48 @@ I am glad to receive pull requests or issues on [GitHub repo](https://github.com
 
 <!--Intrinsic_types-->
 - [Intrinsic types](https://gasinan.github.io/AdvForNotes/Intrinsic_types)
+
+<!--Assignment_and_operations-->
+- [Assignment and operations](https://gasinan.github.io/AdvForNotes/Assignment_and_operations)
+
+<!--Execution_control-->
+- [Execution control](https://gasinan.github.io/AdvForNotes/Execution_control)
+
+<!--Array-->
+- [Array](https://gasinan.github.io/AdvForNotes/Array)
+
+<!--Pointer-->
+- [Pointer](https://gasinan.github.io/AdvForNotes/Pointer)
+
+<!--Enum_types_and_Enumeration_types-->
+- [Enum types and Enumeration types](https://gasinan.github.io/AdvForNotes/Enum_types_and_Enumeration_types)
+
+<!--Procedures-->
+- [Procedures](https://gasinan.github.io/AdvForNotes/Procedures)
+
+<!--Intrinsic_procedures_and_the_standard_library-->
+- [Intrinsic procedures and the standard library](https://gasinan.github.io/AdvForNotes/Intrinsic_procedures_and_the_standard_library)
+
+<!--Modules_and_submodules-->
+- [Modules and submodules](https://gasinan.github.io/AdvForNotes/Modules_and_submodules)
+
+<!--IO_statements-->
+- [I/O statements](https://gasinan.github.io/AdvForNotes/IO_statements)
+
+<!--IO_editing-->
+- [I/O editing](https://gasinan.github.io/AdvForNotes/IO_editing)
+
+<!--Derived_types-->
+- [Derived types](https://gasinan.github.io/AdvForNotes/Derived_types)
+
+<!--Image_team_and_coarray-->
+- [Image, team and coarray](https://gasinan.github.io/AdvForNotes/Image_team_and_coarray)
+
+<!--Interoperability_with_C-->
+- [Interoperability with C](https://gasinan.github.io/AdvForNotes/Interoperability_with_C)
+
+<!--Preprocessing-->
+- [Preprocessing](https://gasinan.github.io/AdvForNotes/Preprocessing)
+
+<!--Plotting-->
+- [Plotting](https://gasinan.github.io/AdvForNotes/Plotting)
