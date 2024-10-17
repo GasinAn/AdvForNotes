@@ -20,8 +20,8 @@ I am glad to receive pull requests or issues on [GitHub repo](https://github.com
 <!--Hello_world-->
 - ["Hello, world!"](https://gasinan.github.io/AdvForNotes/Hello_world)
 
-<!--Program_units-->
-- [Program units](https://gasinan.github.io/AdvForNotes/Program_units)
+<!--Program_units_and_scoping_units-->
+- [Program units and scoping units](https://gasinan.github.io/AdvForNotes/Program_units_and_scoping_units)
 
 <!--Character_set-->
 - [Character set](https://gasinan.github.io/AdvForNotes/Character_set)
