@@ -44,12 +44,6 @@ I am glad to receive pull requests or issues on [GitHub repo](https://github.com
 <!--Array-->
 - [Array](https://gasinan.github.io/AdvForNotes/Array)
 
-<!--Pointer-->
-- [Pointer](https://gasinan.github.io/AdvForNotes/Pointer)
-
-<!--Enum_types_and_Enumeration_types-->
-- [Enum types and Enumeration types](https://gasinan.github.io/AdvForNotes/Enum_types_and_Enumeration_types)
-
 <!--Procedures-->
 - [Procedures](https://gasinan.github.io/AdvForNotes/Procedures)
 
@@ -64,6 +58,12 @@ I am glad to receive pull requests or issues on [GitHub repo](https://github.com
 
 <!--IO_editing-->
 - [I/O editing](https://gasinan.github.io/AdvForNotes/IO_editing)
+
+<!--Pointer-->
+- [Pointer](https://gasinan.github.io/AdvForNotes/Pointer)
+
+<!--Enum_types_and_Enumeration_types-->
+- [Enum types and Enumeration types](https://gasinan.github.io/AdvForNotes/Enum_types_and_Enumeration_types)
 
 <!--Derived_types-->
 - [Derived types](https://gasinan.github.io/AdvForNotes/Derived_types)
