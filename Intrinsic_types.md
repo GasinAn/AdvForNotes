@@ -101,7 +101,7 @@ program main
 end program main
 ```
 
-If `` `z` `` is of type complex, `` real(`z`) `` and `` aimag(`z`) `` will be the real and imaginary part of `` `z` `` respectively, and if `` `z` `` is also a variable, `` `z`%re `` and `` `z`%im `` will also be the real and imaginary part of `` `z` `` respectively. You can make assignment to `` `z`%re `` and `` `z`%im `` to assign to the real and imaginary part of `` `z` `` respectively.
+If `` `z` `` is of type complex, `` real(`z`) `` and `` aimag(`z`) `` will be the real and imaginary part of `` `z` `` respectively, and if `` `z` `` is also a variable, `` `z`%re `` and `` `z`%im `` will also be the real and imaginary part of `` `z` `` respectively.
 
 ## Character
 
@@ -125,7 +125,7 @@ In Fortran, you can maintain a substring `` `char`({`start`}:{`stop`}) `` (NOT `
 
 ## Logical
 
-Default kind logical literal constants are two. They are `.true.` and `.false.`, which represent true and false respectively. You can add a "tail" `` _`kind` `` just behind (with NO space between) default kind logical literal constants to produce `` `kind` `` kind logical literal constants.
+Default kind logical literal constants are two. They are `.true.` and `.false.`, which represent true and false respectively. No space can appear front of or behind `true` and `false` in `.true.` and `.false.`. You can add a "tail" `` _`kind` `` just behind (with NO space between) default kind logical literal constants to produce `` `kind` `` kind logical literal constants.
 
 Standard logical kinds are `logical8`, `logical16`, `logical32`, and `logical64`, which specify that the storage size, expressed in bits, of the logical value is 8, 16, 32, and 64 respectively.
 
