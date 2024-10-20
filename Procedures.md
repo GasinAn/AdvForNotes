@@ -257,7 +257,7 @@ end subroutine example
 
 ### SAVE attribute
 
-A dummy argument with SAVE attribute is a saved dummy argument. The value of a saved dummy argument will be kept even if the procedure have returned. A saved dummy argument in Fortran is equivalent to a static local dummy argument in C. A saved dummy argument must be explicit initialized.
+A dummy argument with SAVE attribute is a saved dummy argument. The value of a saved dummy argument will be kept even if the procedure have returned. A saved dummy argument in Fortran is equivalent to a static local dummy argument in C.
 ```fortran-free-form
 program main
     use iso_fortran_env, only: dp => real64
