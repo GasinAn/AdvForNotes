@@ -10,7 +10,7 @@ A pointer is what can point to a target, and a target is what can be pointed by 
 
 A pointer has a pointer association status of associated, disassociated, or undefined. If a pointer is pointed to ``null()``, it is disassociated, and if a pointer is pointed to something else, it is associated.
 
-# Pointer to rank-zero variable
+# Pointer to scalar
 
 We use `=>` to make pointer assignment, and after that the pointer is pointed to the target. Then, if we make reference to the pointer, we will actually make reference to the target. We can't and don't need to get the value of the target which a pointer is pointing to by applying an operator to the pointer. If we change the value of the target, we will also change the value of the pointer, since the value of the pointer is actually the value of the target.
 ```fortran-free-form
