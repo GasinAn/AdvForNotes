@@ -4,8 +4,6 @@ These Notes are written in [GitHub Flavored Markdown](https://github.github.com/
 
 People who read these Notes should be familiar in using some other programming languages, especially [Python](https://www.python.org/) and [C](https://www.open-std.org/jtc1/sc22/wg14/).
 
-These Notes are under developments and will be updated very slowly.
-
 I am glad to receive pull requests or issues on [GitHub repo](https://github.com/GasinAn/AdvForNotes) for improvements of these Notes.
 
 <!--Introduction-->
