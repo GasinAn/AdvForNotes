@@ -1,6 +1,6 @@
 # Modules and submodules
 
-Although in examples I write the main program, modules and submodules, modules and submodules should be stored in a separate file with file name the same as their names.
+Although in examples I write the main program, modules and submodules, modules and submodules should be stored in a separate file.
 
 A module contains declarations and procedures which can be used in another program unit. In a module, all variables declared implicitly have SAVE attribute, and all procedure declared have an explicit interface, which means if we use a module procedure, we never need to add an explicit block. 
 ```fortran-free-form
