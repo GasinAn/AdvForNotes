@@ -12,14 +12,11 @@ Commonly, if we say "an attribute", actually it refers to an attribute which is 
 
 The type declaration statement in Fortran must be added in the specification part.
 
-The type declaration statement in Fortran `` `type-declaration-stmt` `` is in following form.
-```
-`type-declaration-stmt` := `declaration-type-spec`{{, `attr-spec`}... ::} `entity-decl`{, `entity-decl`}...
-```
-I suggest you to always add `::` in the type declaration statement, or you will often face troubles. The `` `type-declaration-stmt` `` which you add in the Fortran program should be in following form.
+The type declaration statement in Fortran `` `type-declaration-stmt` `` should be in in following form.
 ```
 `type-declaration-stmt` := `declaration-type-spec`{, `attr-spec`}... :: `entity-decl`{, `entity-decl`}...
 ```
+If there are no `` , `attr-spec` ``, `::` may be able to be omitted, but I suggest you to always add `::` in the type declaration statement, or you will often face troubles.
 
 The `` `declaration-type-spec` `` specifies the type and type parameters. An `` `attr-spec` `` specifies an attribute. An `` `entity-decl` `` should be in following form.
 ```
